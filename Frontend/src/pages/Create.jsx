@@ -39,6 +39,7 @@ const Create = () => {
         isClosable: true,
       });
     }
+    setNewProduct({ name: "", price: "", image: "" });
   };
 
   return (
