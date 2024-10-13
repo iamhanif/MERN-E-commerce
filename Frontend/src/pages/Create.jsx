@@ -8,6 +8,8 @@ import {
   useColorModeValue,
   useToast,
 } from "@chakra-ui/react";
+import { useNavigate } from "react-router-dom";
+
 import { useState } from "react";
 import { useProductStore } from "../store/product";
 
@@ -20,6 +22,7 @@ const Create = () => {
 
   const { createProduct } = useProductStore();
   const toast = useToast();
+  const navigate = useNavigate();
 
   const handleAddProduct = async () => {
     const { success, message } = await createProduct(newProduct);
@@ -39,6 +42,7 @@ const Create = () => {
         isClosable: true,
       });
     }
+    navigate("/");
     setNewProduct({ name: "", price: "", image: "" });
   };
 
