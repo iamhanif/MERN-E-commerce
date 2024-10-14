@@ -70,7 +70,7 @@ const Create = () => {
               }
             />
             <Input
-              placeholder="Price"
+              placeholder="Price [ number ]"
               name="price"
               value={newProduct.price}
               onChange={(e) =>

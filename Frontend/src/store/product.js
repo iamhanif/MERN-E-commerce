@@ -9,6 +9,9 @@ export const useProductStore = create((set) => ({
     if (!name || !price || !image) {
       return { success: false, message: "Please fill in all fields." };
     }
+    if (typeof price !== "number") {
+      return { success: false, message: "Amount must be a Number" };
+    }
     const res = await fetch("/api/products", {
       method: "POST",
       headers: {
